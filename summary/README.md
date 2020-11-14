@@ -107,13 +107,10 @@ typeorm entity:create -n Post
 
 
 1.创建 table
-```
-yarn migration 
-```
-2. 执行 node/index.js 添加记录
-```
-node index.js
-```
+通过运行 migration 函数创建 table
+2. CRUD
+通过 manager 实现
 
 
-
+#### seed
+快速填充数据

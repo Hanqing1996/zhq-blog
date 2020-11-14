@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "migration": "typeorm migration:run",
+    "typeorm:build": "rm -rf dist&babel ./src --out-dir dist --extensions .ts,.tsx",
+    "seed": "node dist/seed.js",
+    "migration:run": "typeorm migration:run",
+    "migration:revert": "typeorm migration:revert",
     "entity:create": "typeorm entity:create",
-    "dev": "concurrently \"next dev\" \"babel ./src --out-dir dist --extensions .ts,.tsx\"",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },

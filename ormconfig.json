@@ -5,16 +5,16 @@
    "username": "blog",
    "password": "",
    "database": "blog_development",
-   "synchronize": true,
+   "synchronize": false,
    "logging": false,
    "entities": [
       "dist/entity/**/*.js"
    ],
    "migrations": [
-      "src/migration/**/*.ts"
+      "dist/migration/**/*.js"
    ],
    "subscribers": [
-      "src/subscriber/**/*.ts"
+      "src/subscriber/**/*.js"
    ],
    "cli": {
       "entitiesDir": "src/entity",

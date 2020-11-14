@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "transform":"babel ./src --out-dir dist --extensions \".ts,.tsx\"",
+    "migration": "typeorm migration:run",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"

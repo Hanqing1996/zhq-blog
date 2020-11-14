@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "migration": "typeorm migration:run",
+    "entity:create": "typeorm entity:create",
     "dev": "concurrently \"next dev\" \"babel ./src --out-dir dist --extensions .ts,.tsx\"",
     "build": "next build",
     "start": "next start"

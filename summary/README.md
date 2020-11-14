@@ -60,7 +60,7 @@ node dist/index.js
 ```
 
 #### ormconfig.json
-指定文件类型，比如 dist/migration/**/*.js 是 migrations 类型，当执行 typeorm migration:run 时会自动执行 dist/migration 下的 js 文件
+指定命令执行时的对应 file path。比如当执行 typeorm migration:run 时会自动遵循 "dist/entity/**/*.js" 的文件路径 
 ```
 "entities": [
   "dist/entity/**/*.js"
@@ -93,3 +93,12 @@ typeorm migration:run
 ```
 typeorm migration:revert
 ```
+
+
+#### 创建实体
+```
+typeorm entity:create -n Post
+```
+
+
+

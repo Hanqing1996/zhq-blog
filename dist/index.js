@@ -10,35 +10,37 @@ require("reflect-metadata");
 
 var _typeorm = require("typeorm");
 
-var _User = require("./entity/User");
+var _Post = require("./entity/Post");
 
 (0, _typeorm.createConnection)().then( /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(connection) {
-    var user, users;
+    var posts, posts2;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            console.log("Inserting a new user into the database...");
-            user = new _User.User();
-            user.firstName = "Timber";
-            user.lastName = "Saw";
-            user.age = 25;
-            _context.next = 7;
-            return connection.manager.save(user);
+            _context.next = 2;
+            return connection.manager.find(_Post.Post);
 
-          case 7:
-            console.log("Saved a new user with id: " + user.id);
-            console.log("Loading users from the database...");
-            _context.next = 11;
-            return connection.manager.find(_User.User);
+          case 2:
+            posts = _context.sent;
+            console.log(posts);
+            _context.next = 6;
+            return connection.manager["delete"](_Post.Post, {
+              title: 'post 1'
+            });
 
-          case 11:
-            users = _context.sent;
-            console.log("Loaded users: ", users);
-            console.log("Here you can setup and run express/koa/any other framework.");
+          case 6:
+            _context.next = 8;
+            return connection.manager.find(_Post.Post);
 
-          case 14:
+          case 8:
+            posts2 = _context.sent;
+            console.log(posts2);
+            _context.next = 12;
+            return connection.close();
+
+          case 12:
           case "end":
             return _context.stop();
         }

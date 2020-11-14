@@ -100,5 +100,20 @@ typeorm migration:revert
 typeorm entity:create -n Post
 ```
 
+#### 如何使用实体
+> 操作实体就可以实现对数据库的 CRUD
+
+
+
+
+1.创建 table
+```
+yarn migration 
+```
+2. 执行 node/index.js 添加记录
+```
+node index.js
+```
+
 
 

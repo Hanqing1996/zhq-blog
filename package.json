@@ -5,6 +5,8 @@
   "scripts": {
     "typeorm:build": "rm -rf dist&babel ./src --out-dir dist --extensions .ts,.tsx",
     "seed": "node dist/seed.js",
+    "migration:generate": "typeorm migration:generate",
+    "migration:create": "typeorm migration:create",
     "migration:run": "typeorm migration:run",
     "migration:revert": "typeorm migration:revert",
     "entity:create": "typeorm entity:create",
